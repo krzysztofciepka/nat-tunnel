@@ -1,0 +1,34 @@
+{
+  "name": "nat-tunnel",
+  "version": "0.1.0",
+  "description": "Publish your local server to the world",
+  "main": "client.js",
+  "bin": {
+    "nat-tunnel": "bin/client"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krzysztofciepka/nat-tunnel.git"
+  },
+  "keywords": [
+    "nat",
+    "tunnel",
+    "client",
+    "public"
+  ],
+  "author": "kciepka <krzysztof@ciepka.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krzysztofciepka/nat-tunnel/issues"
+  },
+  "homepage": "https://github.com/krzysztofciepka/nat-tunnel#readme",
+  "devDependencies": {
+    "eslint": "^6.3.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
