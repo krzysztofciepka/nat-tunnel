@@ -29,6 +29,6 @@
     "eslint": "^6.3.0"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "debug": "^4.1.1"
   }
 }
