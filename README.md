@@ -24,7 +24,7 @@ Connection is based on TCP sockets.
 
 Nat-tunnel client requests a dedicated TCP socket on nat-tunnel server and binds it to the locally running service via a duplex stream
 
-Nat-tunnel service creates a dedicated subdomain for client and streams all HTTP requests on that domain to the socket
+Nat-tunnel server creates a dedicated base path for client and streams all HTTP requests on that domain to the socket
 
 When the local service responds, a HTTP response is sent back to the original requester
 
