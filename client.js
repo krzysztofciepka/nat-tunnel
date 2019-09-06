@@ -1,5 +1,5 @@
 const http = require('http');
-const connManager = require('./lib/ConnectionManager')
+const connManager = require('./lib/ConnectionManager');
 
 module.exports = {
   register: (name, rhost, rport, lhost, lport) => {
@@ -7,7 +7,7 @@ module.exports = {
       hostname: rhost,
       port: rport,
       path: `/api/register/${name}`,
-      agent: false
+      agent: false,
     }, (res) => {
       const { statusCode } = res;
       let payload = '';
@@ -16,13 +16,13 @@ module.exports = {
       });
 
       res.on('end', () => {
-        if(!(statusCode > 199 && statusCode < 400)){
+        if (!(statusCode > 199 && statusCode < 400)) {
           throw new Error(payload);
         }
         const body = JSON.parse(payload);
-        console.log("URL: ", body.url)
+        console.log('URL: ', body.url);
         connManager.connect(rhost, body.port, lhost, lport);
       });
     });
-  }
-}
+  },
+};
