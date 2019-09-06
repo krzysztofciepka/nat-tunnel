@@ -20,6 +20,7 @@ module.exports = {
           throw new Error(payload);
         }
         const body = JSON.parse(payload);
+        console.log("URL: ", body.url)
         connManager.connect(rhost, body.port, lhost, lport);
       });
     });
