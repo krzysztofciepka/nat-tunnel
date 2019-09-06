@@ -8,18 +8,15 @@ CLI tool for **nat-tunnel-server**. Allows to publish locally running service to
 
 ## Usage
 
-
         nat-tunnel <name> <local host> <local port>
-
 
 For example:
 
      nat-tunnel my-service 127.0.0.1 3000
 
-will be publish a service running at 127.0.0.1:3000 under domain:
-    
-    http://nat-tunnel.tk/my-service/
+will publish a service running at 127.0.0.1:3000 under:
 
+    http://nat-tunnel.tk/my-service/
 
 ## How it works
 
