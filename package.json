@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Publish your local server to the world",
   "main": "client.js",
+  "private": false,
   "bin": {
     "nat-tunnel": "bin/client"
   },
