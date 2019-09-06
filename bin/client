@@ -4,5 +4,7 @@ const client = require('../client');
 
 const args = process.argv.slice(2);
 
-client.register(args[0], args[1], args[2], args[3]);
+const [name, rhost, rport, lhost, lport] = args
+
+client.register(name, rhost, rport, lhost, lport);
 

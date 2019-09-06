@@ -2,25 +2,26 @@ const http = require('http');
 const connManager = require('./lib/ConnectionManager')
 
 module.exports = {
-  register: (rhost, rport, lhost, lport) => {
+  register: (name, rhost, rport, lhost, lport) => {
     http.get({
       hostname: rhost,
       port: rport,
-      path: '/api/register/my-server',
-      agent: false  // Create a new agent just for this one request
+      path: `/api/register/${name}`,
+      agent: false
     }, (res) => {
-      let body = '';
+      const { statusCode } = res;
+      let payload = '';
       res.on('data', (data) => {
-        body += data;
+        payload += data;
       });
 
       res.on('end', () => {
-        const response = JSON.parse(body);
-        connManager.connect(rhost, response.port, lhost, lport);
-
-      })
+        if(!(statusCode > 199 && statusCode < 400)){
+          throw new Error(payload);
+        }
+        const body = JSON.parse(payload);
+        connManager.connect(rhost, body.port, lhost, lport);
+      });
     });
   }
 }
-
-
