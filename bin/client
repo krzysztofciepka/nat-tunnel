@@ -3,6 +3,6 @@
 const client = require('../client');
 
 const args = process.argv.slice(2);
-const [name, rhost, rport, lhost, lport] = args;
+const [name, lhost, lport] = args;
 
-client.register(name, rhost, rport, lhost, lport);
+client.register(name, 'nat-tunnel.tk', 80, lhost, lport);
